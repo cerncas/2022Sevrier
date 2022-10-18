@@ -1,7 +1,7 @@
 # Optics Hands-On in Sevrier, November 2022
 *H., Bartosik, D. Gamba,  G. Sterbini*
 
-During the [CAS 2022 in Sevrier](https://indico.cern.ch/event/1117526/) (France), we will be using Python as scripting languages for the Optics Hands-On Lattice course.
+During the [CAS 2022 in Sevrier](https://indico.cern.ch/event/1126689/) (France), we will be using Python as scripting languages for the Optics Hands-On Lattice course.
 
 This repository contains all material used during the course.
 The repository is based on the material prepared and updated during previous courses by * W. Herr,  A. Latina, G. Sterbini*.
@@ -14,7 +14,7 @@ The repository is based on the material prepared and updated during previous cou
 
 ### Known schools using this material
 
-- [CAS 2019 in Kaunas](https://indico.cern.ch/event/1117526/)
+- [CAS 2019 in Slangerup](https://indico.cern.ch/event/780638/)
 
 ## Notes for the maintainer and presenter
 
