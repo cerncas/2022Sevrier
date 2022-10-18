@@ -98,7 +98,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
     On the left hand side of the widows you should see all files under the folder in your operating system where you executed the `jupyter lab` command.
     This will be your **working directory**. 
 
-4. Start playing with Python!  Please, make sure to go throw all the [examples/test.ipynb](test.ipynb) to familiarize with the typical Python concepts that will be used during the course, but also to verify your installation. If you happen to experience any problem, please check to have installed the whole anaconda distribution. Alternatively, you can try to go back to your terminal, and install each single package independently, e.g.:
+4. Start playing with Python!  Please, make sure to go throw all the [examples/test.ipynb](examples/test.ipynb) to familiarize with the typical Python concepts that will be used during the course, but also to verify your installation. If you happen to experience any problem, please check to have installed the whole anaconda distribution. Alternatively, you can try to go back to your terminal, and install each single package independently, e.g.:
 
 ```python
 pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab cpymad
