@@ -9,4 +9,4 @@ dependencies:
   - pip:
     - sympy
     - matplotlib
-    - cpymad ==1.9.0
+    - cpymad

@@ -208,7 +208,6 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
-import sympy as sy
 
 # Matrix definition
 Omega=np.array([[0, 1],[-1,0]])
