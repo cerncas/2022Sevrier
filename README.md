@@ -8,5 +8,6 @@ The repository is based on the material prepared and updated during previous cou
 
 - [student_instructions.md](./student_instructions.md) contains all information to get ready for the course. We kindly ask the student to read this document **before coming** to CAS to **prepare yourself** (and **your laptop**) for the course. 
 - [lecturer_instructions.md](./lecturer_instructions.md) contains some useful for the lecturer. 
+- The overleaf repository can be found at https://www.overleaf.com/read/rqmgdrfgdcrs
 
 > **NOTE:** the material in this repository is expected to evolve over time thanks to the feedback received from you! Please don't hesitate to transmit us your comments, suggestions, and complains!
