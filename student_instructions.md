@@ -27,7 +27,7 @@ If you are not familiar with Python and you have not it installed on your laptop
 for example, to [jupyterLab](https://gke.mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/try.jupyter.org?urlpath=lab),
 and test the following commands:
 
-Tutoria1-Part1: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cerncas/2022Sevrier/HEAD?filepath=example/test.ipynb) 
+Test.ipynb: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cerncas/Sevrier2022/main?filepath=example/test.ipynb) 
 
 ```python
 import numpy as np
@@ -47,7 +47,7 @@ def Q(f=1):
 # Eigenvalues and eigenvectors
 np.linalg.eig(M)
 ```
-You can compare and check your output with the ones [here](tests/SimpleTest.ipynb).
+You can compare and check your output with the ones [here](example/test.ipynb).
 
 ---
 # Software Setup
@@ -66,7 +66,7 @@ We suggest to install the **Anaconda** distribution from https://www.anaconda.co
 <a href=https://www.anaconda.com/distribution/><img src="_img_instructions/anaconda.png" alt="" width="70%"/></a>
 </p>
 
-> We suggest to install one of the latest distribution (**for example version 3.9**).
+> We suggest to install one of the latest distribution (**for example version Python 3.9**).
 
 The installation process clearly depends on your operating system. We suggest you to follow the official documentation for [Windows](https://docs.anaconda.com/anaconda/install/windows/), [Linux](https://docs.anaconda.com/anaconda/install/linux/), or [Mac](https://docs.anaconda.com/anaconda/install/mac-os/) as appropriate.
 After having installed **Anaconda**, and [verified your installation](https://docs.anaconda.com/anaconda/install/verify-install/) - as suggested in the [installation documentation](https://docs.anaconda.com/anaconda/install/) - we invite you to start [launching Jupyter Lab](#launch-jupyter-lab) and then [test that everything works](#test-that-everything-works):
@@ -98,7 +98,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
     On the left hand side of the widows you should see all files under the folder in your operating system where you executed the `jupyter lab` command.
     This will be your **working directory**. 
 
-4. Create a new "Python 3" "Notebook" and start playing with Python! If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [notebook](tests/PythonExample.ipynb) (courtesy of *Simon Albright*).
+4. Create a new "Python 3" "Notebook" and start playing with Python! If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [notebook](examples/000_example.ipynb) (courtesy of *Simon Albright*).
 
 5. Try to import all packages that we will be using in our course:
 
