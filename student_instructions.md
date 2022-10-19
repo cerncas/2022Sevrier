@@ -101,7 +101,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
 4. Start playing with Python!  Please, make sure to go throw all the [examples/test.ipynb](examples/test.ipynb) to familiarize with the typical Python concepts that will be used during the course, but also to verify your installation. If you happen to experience any problem, please check to have installed the whole anaconda distribution. Alternatively, you can try to go back to your terminal, and install each single package independently, e.g.:
 
 ```python
-pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab cpymad
+pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab cpymad PyNAFF
 ```
 
 5. If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [examples/000_example.ipynb](examples/000_example.ipynb) (courtesy of *Simon Albright*).

@@ -1,7 +1,7 @@
 
 ## Notes for the maintainer and presenter
 
-###  Known schools using this material
+###  Previous schools using this material
 
 - [CAS 2019 in Slangerup](https://indico.cern.ch/event/780638/)
 
