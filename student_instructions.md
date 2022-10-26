@@ -104,7 +104,7 @@ Once the installation of **Anaconda** is finalised or within your existing Pytho
 pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab cpymad PyNAFF
 ```
 
-5. If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [examples/000_example.ipynb](examples/PythonBasic.ipynb) (courtesy of *Simon Albright*).
+5. If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [examples/PythonBasic.ipynb](examples/PythonBasic.ipynb) (courtesy of *Simon Albright*).
 
 
 6. **Just before the start of the course**, we will ask you to download the **latest version** of [Exercises.ipynb](./Exercises.ipynb) (even better, the whole repository) in your **working directory**.
