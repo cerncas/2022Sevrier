@@ -1,0 +1,46 @@
+! General parameters
+Lcell = 100;
+
+! Quadrupole Parameters
+f=60;
+K1FL := 1/f;
+K1DL := -K1FL;
+
+! Quadrupole definition
+QF: multipole, KNL:={0,K1FL};
+QD: multipole, KNL:={0,K1DL};
+
+
+! Sequence definition
+FODO: SEQUENCE, REFER=center, L=100;
+qf: QF, at=0;
+qd: QD, at=50;
+ENDSEQUENCE;
+
+! Beam definition
+beam, particle=proton, energy=1;
+use, sequence=FODO;
+
+/*************************************************/
+!   TWISS
+/*************************************************/
+
+SELECT,FLAG=TWISS,column=name,s,betx,bety,alfx,alfy,mux,muy,x,px,y,py,dx,dpx,dy,dpy;
+twiss,file="FODO_output_before_matching.txt";
+
+match, sequence=FODO;
+global,q1=60/360;
+global,q2=60/360;
+vary, name=f, step=0.00001;
+lmdif, calls=50, tolerance=1e-15;
+endmatch;
+
+SELECT,FLAG=TWISS,column=name,s,betx,bety,alfx,alfy,mux,muy,x,px,y,py,dx,dpx,dy,dpy;
+twiss,file="FODO_output_after_matching.txt";
+
+plot, HAXIS=s, VAXIS=betx,bety,colour=100, interpolate;
+plot, HAXIS=s, VAXIS=x,y,colour=100, interpolate;
+
+value, table(SUMM,Q1);
+value, table(SUMM,Q2);
+value, table(TWISS,FODO$END,MUX);
