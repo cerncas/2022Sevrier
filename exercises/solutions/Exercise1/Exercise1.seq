@@ -1,0 +1,31 @@
+circum=1000.0;
+ncell = 8; !Number of cells 
+lcell = circum/ncell;
+lq = 3.00; !Length of a quadrupole
+
+/***element definitions***/
+
+!define bending magnet as multipole 
+!we have 4 bending magnets per cell
+mb:multipole, knl={2.0*pi/(4*ncell)};
+
+!define quadrupoles as multipoles 
+qf: multipole,knl={0,0.295278e-2*lq}; 
+qd: multipole,knl={0,-0.295278e-2*lq};
+
+!sequence declaration;
+cas1: sequence, refer=centre, l=circum;
+   start_machine: marker, at = 0;
+   n = 1;
+   while (n < ncell+1) {
+	qf: qf, at=(n-1)*lcell;
+	mb: mb, at=(n-1)*lcell+0.15*lcell;
+	mb: mb, at=(n-1)*lcell+0.35*lcell;
+	qd: qd, at=(n-1)*lcell+0.50*lcell;
+	mb: mb, at=(n-1)*lcell+0.65*lcell;
+	mb: mb, at=(n-1)*lcell+0.85*lcell;
+	at=(n-1)*lcell;
+	n = n + 1;
+}
+end_machine: marker at=circum;
+endsequence;

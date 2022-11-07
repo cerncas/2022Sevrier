@@ -1,0 +1,159 @@
+circum=2000.0;
+ncell = 40; !Number of cells 
+lcell = circum/ncell;
+lq = 3.00; !Length of a quadrupole
+
+nnorm=128;
+
+!element definitions;
+
+!define bending magnet as multipole 
+!we have 4 bending magnets per cell
+
+!mb:multipole,knl={2.0*pi/(nnorm)};
+mb:SBEND, L=5,ANGLE=2.0*pi/(nnorm);
+
+!define quadrupoles as multipoles 
+
+kqf:=0.0098;
+kqd:=-0.0098;
+qf: multipole,knl:={0,kqf*lq}; 
+qd: multipole,knl:={0,kqd*lq};
+
+// define the sextupoles as multipole
+lsex = 0.00001; // dummy length, only used in the sequence; i
+
+
+ksf := +0.017041/ncell;
+ksd := -0.024714/ncell;
+
+// ATTENTION: must use knl:= and NOT knl= to match later ! 
+msf: multipole, knl:={0,0,ksf};
+msd: multipole, knl:={0,0,ksd};
+
+
+!sequence declaration;
+cas4: sequence, refer=centre, l=circum;
+   start_machine: marker, at = 0;
+ 
+   n = 0;
+   while (n < 4) {
+	qf: qf,   at=n*lcell;
+	msf: msf, at=n*lcell + lsex/2.0;
+	mb: mb,   at=n*lcell + 0.15*lcell;
+	mb: mb,   at=n*lcell + 0.35*lcell;
+	qd: qd,   at=n*lcell + 0.50*lcell;
+	msd: msd, at=n*lcell + 0.50*lcell + lsex/2.0;
+	mb: mb,   at=n*lcell + 0.65*lcell;
+	mb: mb,   at=n*lcell + 0.85*lcell;
+	n = n + 1;
+}
+
+! *************************
+! START dispersion suppressor
+	qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+	n = n + 1;
+
+        qf: qf,   at=n*lcell;
+        mb: mb,   at=n*lcell + 0.15*lcell;
+	mb: mb,   at=n*lcell + 0.35*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        mb: mb,   at=n*lcell + 0.65*lcell;
+        mb: mb,   at=n*lcell + 0.85*lcell;
+	n = n + 1;
+! END dispersion suppressor
+
+! *************************
+! START straight section
+        qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+	n = n + 1;
+
+        qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+	n = n + 1;
+! END straight section
+
+! *************************
+! START dispersion suppressor
+        qf: qf,   at=n*lcell;
+        mb: mb,   at=n*lcell + 0.15*lcell;
+	mb: mb,   at=n*lcell + 0.35*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        mb: mb,   at=n*lcell + 0.65*lcell;
+        mb: mb,   at=n*lcell + 0.85*lcell;
+	n = n + 1;
+	
+	qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+	n = n + 1;
+! END dispersion suppressor
+   
+   while (n < 24) {
+	qf: qf,   at=n*lcell;
+	msf: msf, at=n*lcell + lsex/2.0;
+	mb: mb,   at=n*lcell + 0.15*lcell;
+	mb: mb,   at=n*lcell + 0.35*lcell;
+	qd: qd,   at=n*lcell + 0.50*lcell;
+	msd: msd, at=n*lcell + 0.50*lcell + lsex/2.0;
+	mb: mb,   at=n*lcell + 0.65*lcell;
+	mb: mb,   at=n*lcell + 0.85*lcell;
+	n = n + 1;
+}
+
+! *************************
+! START dispersion suppressor
+        qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        n = n + 1;
+
+        qf: qf,   at=n*lcell;
+        mb: mb,   at=n*lcell + 0.15*lcell;
+        mb: mb,   at=n*lcell + 0.35*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        mb: mb,   at=n*lcell + 0.65*lcell;
+        mb: mb,   at=n*lcell + 0.85*lcell;
+        n = n + 1;
+! END dispersion suppressor
+
+! *************************
+! START straight section
+        qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        n = n + 1;
+
+        qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        n = n + 1;
+! END straight section
+
+! *************************
+! START dispersion suppressor
+        qf: qf,   at=n*lcell;
+        mb: mb,   at=n*lcell + 0.15*lcell;
+        mb: mb,   at=n*lcell + 0.35*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        mb: mb,   at=n*lcell + 0.65*lcell;
+        mb: mb,   at=n*lcell + 0.85*lcell;
+        n = n + 1;
+
+        qf: qf,   at=n*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        n = n + 1;
+! END dispersion suppressor
+
+   while (n < ncell) {
+        qf: qf,   at=n*lcell;
+        msf: msf, at=n*lcell + lsex/2.0;
+        mb: mb,   at=n*lcell + 0.15*lcell;
+        mb: mb,   at=n*lcell + 0.35*lcell;
+        qd: qd,   at=n*lcell + 0.50*lcell;
+        msd: msd, at=n*lcell + 0.50*lcell + lsex/2.0;
+        mb: mb,   at=n*lcell + 0.65*lcell;
+        mb: mb,   at=n*lcell + 0.85*lcell;
+        n = n + 1;
+}
+
+end_machine: marker at=circum;
+endsequence;
