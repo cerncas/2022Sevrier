@@ -111,7 +111,7 @@ pip install numpy matplotlib seaborn scipy ipywidgets jupyter jupyterlab cpymad 
 5. If you are not familiar with Python, you can start playing with simple python snippets. For example, have a look to the following [examples/PythonBasic.ipynb](examples/PythonBasic.ipynb) (courtesy of *Simon Albright*).
 
 
-6. **Just before the start of the course**, we will ask you to download the **latest version** of the [hands-on lattice exercises](./exercises.pdf) (even better, the whole repository) in your **working directory**.
+6. **Just before the start of the course**, we will ask you to download the **latest version** of the [hands-on lattice exercises](./exercises/Exercises.pdf) (even better, the whole repository) in your **working directory**.
 
 7. **Optional:** instead of running Jupyter lab within a browser, you can try to install and the [jupyterlab-desktop](https://github.com/jupyterlab/jupyterlab-desktop) application.
 
